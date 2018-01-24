@@ -1,0 +1,43 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+		Loaded="Page_Loaded"
+        Title="MainWindow" Height="350" Width="750">
+	<Grid VerticalAlignment="Top">
+		<StackPanel HorizontalAlignment="Left">
+            <Button Click="Kaishi_Click" Width="120" Height="40" Content="開始"/>
+            <Button Click="Teishi_Click" Width="120" Height="40" Content="停止"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Margin="120,0,0,0">
+            <Button Click="GetColor_Click" Width="120" Height="40" Content="色取得"/>
+            <Label x:Name="txtBreakFlg"></Label>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Margin="240,0,0,0">
+            <Button Click="BossYusenFlg_Click" Width="120" Height="40" Content="ボス優先切替"/>
+            <Label x:Name="txtBossYusenFlg"></Label>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Margin="360,0,0,0">
+            <Label>対象マップ座標</Label>
+            <TextBox x:Name="txtPointX" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Text="" Width="120" />
+            <TextBox x:Name="txtPointY" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Text="" Width="120" />
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Margin="480,0,0,0">
+            <Label>出撃後マップ位置調整</Label>
+            <TextBox x:Name="txtDragAndDropX" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Text="" Width="120" />
+            <TextBox x:Name="txtDragAndDropY" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Text="" Width="120" />
+            <Button Click="DragAndDropClear_Click" Width="120" Height="40" Content="Clear"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Margin="600,0,0,0">
+            <Button Click="Debug_Click" Width="120" Height="40" Content="Debug"/>
+        </StackPanel>
+
+        <WindowsFormsHost Grid.Column="0" Margin="0,120,0,0" Height="1080" Width="1920">
+			<wf:PictureBox x:Name="pictureBox1" />
+		</WindowsFormsHost>
+	</Grid>
+</Window>

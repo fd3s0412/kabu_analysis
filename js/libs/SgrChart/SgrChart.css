@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+.sgr_chart {
+	position: relative;
+}
+.sgr_chart .graph_wrapper {
+	position: relative;
+	overflow: auto;
+}
+.sgr_chart ul.info_area {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	margin: 12px 10px;
+	border: 1px solid #999;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: #666;
+}
+.sgr_chart ul.info_area li:first-child {
+	margin-left: 0;
+}
+.sgr_chart ul.info_area li {
+	margin-left: 10px;
+	font-size: 16px;
+	color: white;
+}
+.sgr_chart ul.info_area li.takane {
+	color: #f99;
+}
+.sgr_chart ul.info_area li.yasune {
+	color: #99f;
+}
+.sgr_chart .vertical_line {
+	position: absolute;
+	display: inline-block;
+}
+.sgr_chart .vertical_line.active_bar {
+	border: 1px solid #7fffd4;
+}

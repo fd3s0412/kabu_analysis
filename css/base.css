@@ -1,0 +1,198 @@
+body, div, p, span, table, table th, table td, ul, li {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: arial, sans-serif;
+	font-size: 12px;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+/*------------------------------------------------------------*/
+/* テーブル */
+/*------------------------------------------------------------*/
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+table th,
+table td {
+	border-right: 1px solid #5F5F5F;
+	border-bottom: 1px solid #5F5F5F;
+	padding: 4px 8px;
+	white-space: nowrap;
+}
+table th:first-child,
+table td:first-child {
+	border-left: 1px solid #5F5F5F;
+}
+table th {
+	padding: 4px 8px;
+	background-color: #5F5F5F;
+	color: white;
+}
+table tr:nth-child(even) {
+	background-color: #F8F8F8;
+}
+table.mini {
+	display: inline-block;
+	width: auto;
+	vertical-align: bottom;
+}
+/*------------------------------------------------------------*/
+/* 株価一覧 */
+/*------------------------------------------------------------*/
+table td.btn_bunseki {
+	width: 50px;
+}
+table td.juni {
+	text-align: center;
+}
+table td.shoken_code {
+	text-align: center;
+}
+table td.kaishamei {}
+table td.shijo {
+	text-align: center;
+}
+table td.torihiki_date {
+	text-align: center;
+}
+table td.torihikine {}
+table td.zenjitsuhi_gaku {}
+table td.zenjitsuhi_ritsu {}
+table td.dekidaka {}
+table td.takane {}
+table td.yasune {}
+table td.uehigeritsu {}
+table td.gyoshu {}
+table td.yoku_eigyobi {}
+table td.csv_date {}
+table td.yoku_yoritsuki {}
+table td.yoku_takane {}
+table td.yoku_yasune {}
+table td.kanosei_win {
+	text-align: center;
+}
+table td.kanosei_lose {
+	text-align: center;
+}
+table td.yoritsuki_kairiritsu {}
+table td.judge {
+	text-align: center;
+}
+table td.pips {}
+table td.pips_shisu_bar {
+	padding-left: 0;
+}
+/*------------------------------------------------------------*/
+/* マイナス表示 */
+/*------------------------------------------------------------*/
+.minus {
+	color: red;
+}
+/*------------------------------------------------------------*/
+/* 寄せ */
+/*------------------------------------------------------------*/
+.align_right {
+	text-align: right;
+}
+/*------------------------------------------------------------*/
+/* ボタン */
+/*------------------------------------------------------------*/
+.button {
+  display: inline-block;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+}
+.button::before,
+.button::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+.button,
+.button::before,
+.button::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.button {
+  border: 2px solid #333;
+  background-color: #333;
+  color: #fff;
+}
+.button:hover {
+  border-color: #59b1eb;
+  background-color: #fff;
+  color: #59b1eb;
+}
+.button.mini {
+	padding: 4px 6px;
+	font-size: 12px;
+}
+/*------------------------------------------------------------*/
+/* リスト */
+/*------------------------------------------------------------*/
+ul li {
+	display: inline-block;
+	list-style: none;
+}
+/*------------------------------------------------------------*/
+/* コンテンツ */
+/*------------------------------------------------------------*/
+.contents {
+	padding: 4px;
+}
+/*------------------------------------------------------------*/
+/* 数値入力欄 */
+/*------------------------------------------------------------*/
+input[type="number"] {
+	text-align: right;
+}
+/*------------------------------------------------------------*/
+/* 見出し */
+/*------------------------------------------------------------*/
+h2 {
+	margin-bottom: 1px;
+	border-left: 5px solid #000000;
+	padding: 4px 8px;
+	background-color: #5F5F5F;
+	color: #FFFFFF;
+	font-size: 1.2em;
+}
+/*------------------------------------------------------------*/
+/* インライン */
+/*------------------------------------------------------------*/
+.inline {
+	display: inline-block !important;
+	vertical-align: top !important;
+}
+/*------------------------------------------------------------*/
+/* バー */
+/*------------------------------------------------------------*/
+.bar {
+	display: inline-block;
+	height: 12px;
+	background-color: #999999;
+}
+.minus_bar {
+	background-color: #ff9999;
+}
+/*------------------------------------------------------------*/
+/* グラフ */
+/*------------------------------------------------------------*/
+.graph_wrapper {
+	max-width: 100%;
+	overflow: auto;
+}
