@@ -3,6 +3,7 @@
 <?php
 require_once (dirname ( __FILE__ ) . '/php_class/ChromePhp.php');
 require_once (dirname ( __FILE__ ) . '/php_class/dao/Chart5mDao.php');
+require_once (dirname ( __FILE__ ) . '/php_class/dao/MasterMeigaraDao.php');
 
 // パラメタ
 $shoken_code = $_GET ['shoken_code'];
@@ -11,12 +12,18 @@ $shoken_code = $_GET ['shoken_code'];
 $dao = new Chart5mDao ();
 $datas = $dao->findByShokenCd ( $shoken_code );
 ChromePhp::log ( count ( $datas ) );
+
+// 銘柄データ取得
+$masterMeigaraDao = new MasterMeigaraDao ();
+$meigara = $masterMeigaraDao->findByShokenCd ( $shoken_code );
+ChromePhp::log ( $meigara );
 ?>
 
 <head>
 <?php include 'fragment/head.php'; ?>
 <title>5分足</title>
 <script src="./js/libs/ResizeInner/ResizeInner.js"></script>
+<script src="./js/libs/AccordionWrapper/AccordionWrapper.js"></script>
 <script src="./js/chart5m.js"></script>
 </head>
 <body>
@@ -27,12 +34,38 @@ ChromePhp::log ( count ( $datas ) );
 		<!-- ------------------------------------------------------------ -->
 		<form method="get" action="chart5m.php">
 			<dl>
-				<dt>証券コード</dt>
+				<dt>
+					証券コード
+					<i id="btnAccordionClose" class="fa fa-caret-square-o-up fa-2" aria-hidden="true"></i>
+					<i id="btnAccordionOpen" class="fa fa-caret-square-o-down fa-2" aria-hidden="true"></i>
+				</dt>
 				<dd>
 					<input type="text" name="shoken_code"
 						value="<?php echo $shoken_code; ?>" />
 				</dd>
 			</dl>
+			<div class="accordion_wrapper">
+				<dl>
+					<dt>銘柄名</dt>
+					<dd><?php echo $meigara['meigaramei']; ?></dd>
+				</dl>
+				<dl>
+					<dt>市場・商品区分</dt>
+					<dd><?php echo $meigara['shijo_shohin_kubun']; ?></dd>
+				</dl>
+				<dl>
+					<dt>33業種区分</dt>
+					<dd><?php echo $meigara['gyoshu_kubun_a']; ?></dd>
+				</dl>
+				<dl>
+					<dt>17業種区分</dt>
+					<dd><?php echo $meigara['gyoshu_kubun_b']; ?></dd>
+				</dl>
+				<dl>
+					<dt>規模区分</dt>
+					<dd><?php echo $meigara['kibo_kubun']; ?></dd>
+				</dl>
+			</div>
 		</form>
 		<!-- ------------------------------------------------------------ -->
 		<!-- 5分足 -->
@@ -41,7 +74,6 @@ ChromePhp::log ( count ( $datas ) );
 			<table>
 				<thead>
 					<tr>
-						<th>証券コード</th>
 						<th>日付</th>
 						<th>時刻</th>
 						<th>始値</th>
@@ -63,7 +95,6 @@ ChromePhp::log ( count ( $datas ) );
 					$html = '';
 					foreach ( $datas as $data ) {
 						$line = '<tr>';
-						$line .= '<td>' . $data ['shoken_code'] . '</td>';
 						$line .= '<td>' . $data ['torihiki_date'] . '</td>';
 						$line .= '<td>' . $data ['torihiki_time'] . '</td>';
 						$line .= '<td class="align_right">' . $data ['hajimene'] . '</td>';

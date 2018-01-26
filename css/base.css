@@ -238,18 +238,21 @@ div.two_block {
 	width: 48%;
 }
 dl {
+	display: table;
+	width: 100%;
 	margin: 0;
 	border-bottom: 1px solid #ddd;
 	padding: 0;
 }
 dl dt,
 dl dd {
+	display: table-cell;
 	margin: 0;
 	padding: 5px 10px;
 }
 dl dt {
-	display: inline-block;
-	min-width: 9em;
+	min-width: 7em;
+	width: 7em;
 	border-right: 1px solid #ddd;
 }
 dl dd {
@@ -281,4 +284,10 @@ dl dd {
 }
 .btn_base:active {
 	background-color: #787878;
+}
+/*------------------------------------------------------------*/
+/* アコーディオン */
+/*------------------------------------------------------------*/
+.accordion_wrapper {
+	display: none;
 }
