@@ -16,10 +16,15 @@ ChromePhp::log ( count ( $datas ) );
 <head>
 <?php include 'fragment/head.php'; ?>
 <title>5分足</title>
+<script src="./js/libs/ResizeInner/ResizeInner.js"></script>
+<script src="./js/chart5m.js"></script>
 </head>
 <body>
 	<?php include 'header.php'; ?>
 	<div class="contents">
+		<!-- ------------------------------------------------------------ -->
+		<!-- 入力欄 -->
+		<!-- ------------------------------------------------------------ -->
 		<form method="get" action="chart5m.php">
 			<dl>
 				<dt>証券コード</dt>
@@ -32,52 +37,54 @@ ChromePhp::log ( count ( $datas ) );
 		<!-- ------------------------------------------------------------ -->
 		<!-- 5分足 -->
 		<!-- ------------------------------------------------------------ -->
-		<table>
-			<thead>
-				<tr>
-					<th>証券コード</th>
-					<th>日付</th>
-					<th>時刻</th>
-					<th>始値</th>
-					<th>高値</th>
-					<th>安値</th>
-					<th>終値</th>
-					<th>出来高</th>
-					<th>移動平均短期</th>
-					<th>移動平均中期</th>
-					<th>移動平均長期</th>
-					<th>MACD</th>
-					<th>シグナル</th>
-					<th>OSCI</th>
-					<th>RSI</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php
-				$html = '';
-				foreach ( $datas as $data ) {
-					$line = '<tr>';
-					$line .= '<td>' . $data ['shoken_code'] . '</td>';
-					$line .= '<td>' . $data ['torihiki_date'] . '</td>';
-					$line .= '<td>' . $data ['torihiki_time'] . '</td>';
-					$line .= '<td>' . $data ['hajimene'] . '</td>';
-					$line .= '<td>' . $data ['takane'] . '</td>';
-					$line .= '<td>' . $data ['yasune'] . '</td>';
-					$line .= '<td>' . $data ['owarine'] . '</td>';
-					$line .= '<td>' . $data ['volume'] . '</td>';
-					$line .= '<td>' . $data ['ma_short'] . '</td>';
-					$line .= '<td>' . $data ['ma_middle'] . '</td>';
-					$line .= '<td>' . $data ['ma_long'] . '</td>';
-					$line .= '<td>' . $data ['macd'] . '</td>';
-					$line .= '<td>' . $data ['signal'] . '</td>';
-					$line .= '<td>' . $data ['osci'] . '</td>';
-					$line .= '<td>' . $data ['rsi'] . '</td>';
-					$html .= $line . '</tr>';
-				}
-				echo $html;
-				?>
-			</tbody>
-		</table>
+		<div class="scroll_wrapper">
+			<table>
+				<thead>
+					<tr>
+						<th>証券コード</th>
+						<th>日付</th>
+						<th>時刻</th>
+						<th>始値</th>
+						<th>高値</th>
+						<th>安値</th>
+						<th>終値</th>
+						<th>出来高</th>
+						<th>移動平均短期</th>
+						<th>移動平均中期</th>
+						<th>移動平均長期</th>
+						<th>MACD</th>
+						<th>シグナル</th>
+						<th>OSCI</th>
+						<th>RSI</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					$html = '';
+					foreach ( $datas as $data ) {
+						$line = '<tr>';
+						$line .= '<td>' . $data ['shoken_code'] . '</td>';
+						$line .= '<td>' . $data ['torihiki_date'] . '</td>';
+						$line .= '<td>' . $data ['torihiki_time'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['hajimene'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['takane'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['yasune'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['owarine'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['volume'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['ma_short'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['ma_middle'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['ma_long'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['macd'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['signal'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['osci'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['rsi'] . '</td>';
+						$html .= $line . '</tr>';
+					}
+					echo $html;
+					?>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </body>
 </html>
