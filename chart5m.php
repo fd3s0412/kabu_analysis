@@ -17,6 +17,8 @@ ChromePhp::log ( count ( $datas ) );
 $masterMeigaraDao = new MasterMeigaraDao ();
 $meigara = $masterMeigaraDao->findByShokenCd ( $shoken_code );
 ChromePhp::log ( $meigara );
+
+// 買条件該当レコード
 ?>
 
 <head>
@@ -101,7 +103,7 @@ ChromePhp::log ( $meigara );
 						$line .= '<td class="align_right">' . $data ['takane'] . '</td>';
 						$line .= '<td class="align_right">' . $data ['yasune'] . '</td>';
 						$line .= '<td class="align_right">' . $data ['owarine'] . '</td>';
-						$line .= '<td class="align_right">' . $data ['volume'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['dekidaka'] . '</td>';
 						$line .= '<td class="align_right">' . $data ['ma_short'] . '</td>';
 						$line .= '<td class="align_right">' . $data ['ma_middle'] . '</td>';
 						$line .= '<td class="align_right">' . $data ['ma_long'] . '</td>';

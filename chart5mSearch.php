@@ -8,7 +8,7 @@ include (dirname ( __FILE__ ) . '/php_class/CsvUtil.php');
 
 <head>
 <?php include 'fragment/head.php'; ?>
-<title>取引ルール登録</title>
+<title>取引条件登録</title>
 </head>
 <body>
 	<?php include 'header.php'; ?>
@@ -18,7 +18,15 @@ include (dirname ( __FILE__ ) . '/php_class/CsvUtil.php');
 		<!-- ------------------------------------------------------------ -->
 		<h2>期間</h2>
 		<dl>
-			<dt>期間</dt>
+			<dt>日付</dt>
+			<dd>
+				<input type="number" />
+				～
+				<input type="number" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>時刻</dt>
 			<dd>
 				<input type="number" />
 				～
@@ -117,7 +125,7 @@ include (dirname ( __FILE__ ) . '/php_class/CsvUtil.php');
 		<!-- ボタンエリア -->
 		<!-- ------------------------------------------------------------ -->
 		<div class="btn_area">
-			<a href="#" class="btn_base">検 索</a>
+			<a href="#" id="btnSearch" class="btn_base">検 索</a>
 		</div>
 	</div>
 </body>

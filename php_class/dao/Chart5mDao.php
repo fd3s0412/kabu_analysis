@@ -13,37 +13,6 @@ class Chart5mDao extends Chart5mBaseDao {
     c.torihiki_time';
 
 	/**
-	 * SQL実行結果を連装配列にして返します.
-	 *
-	 * @param unknown $stmt
-	 * @return multitype:
-	 */
-	private function getResultList($stmt) {
-		$resultList = array ();
-		while ( $row = $stmt->fetch () ) {
-			$result = array (
-				'shoken_code' => $row ["shoken_code"],
-				'torihiki_date' => $row ["torihiki_date"],
-				'torihiki_time' => $row ["torihiki_time"],
-				'hajimene' => $row ["price_open"],
-				'takane' => $row ["price_high"],
-				'yasune' => $row ["price_low"],
-				'owarine' => $row ["price_close"],
-				'volume' => $row ["volume"],
-				'ma_short' => $row ["ma_short"],
-				'ma_middle' => $row ["ma_middle"],
-				'ma_long' => $row ["ma_long"],
-				'macd' => $row ["macd"],
-				'signal' => $row ["signal"],
-				'osci' => $row ["osci"],
-				'rsi' => $row ["rsi"]
-			);
-			array_push ( $resultList, $result );
-		}
-		return $resultList;
-	}
-
-	/**
 	 * 証券コードによって、日足データを検索します.
 	 *
 	 * @param unknown $shokenCd
@@ -53,6 +22,6 @@ class Chart5mDao extends Chart5mBaseDao {
 		$stmt = $this->conn->prepare ( $this->SQL_FIND_BY_SHOKEN_CD );
 		$stmt->bindParam ( ':shoken_code', $shokenCd );
 		$stmt->execute ();
-		return $this->getResultList ( $stmt );
+		return parent::getResultList ( $stmt );
 	}
 }
