@@ -17,36 +17,37 @@ $conn = new PDO ( $dsn );
 <body>
 	<?php include 'header.php'; ?>
 	<div class="contents">
-		<table>
-			<thead>
-				<tr>
-					<th>&nbsp;</th>
-					<th>順位</th>
-					<th>コード</th>
-					<th>名称</th>
-					<th>市場</th>
-					<th>取引日付</th>
-					<th>取引値</th>
-					<th>前日比（額）</th>
-					<th>前日比（率）</th>
-					<th>出来高</th>
-					<th>高値</th>
-					<th>安値</th>
-					<th>上ひげ率</th>
-					<th>業種</th>
-					<th>翌営業日</th>
-					<th>寄付</th>
-					<th>高値</th>
-					<th>安値</th>
-					<th>勝可能性</th>
-					<th>負可能性</th>
-					<th>寄付乖離率</th>
-					<th>判定</th>
-					<th>pips</th>
-					<th>p/k</th>
-				</tr>
-			</thead>
-			<tbody>
+		<div class="scroll_wrapper">
+			<table>
+				<thead>
+					<tr>
+						<th>&nbsp;</th>
+						<th>順位</th>
+						<th>コード</th>
+						<th>名称</th>
+						<th>市場</th>
+						<th>取引日付</th>
+						<th>取引値</th>
+						<th>前日比（額）</th>
+						<th>前日比（率）</th>
+						<th>出来高</th>
+						<th>高値</th>
+						<th>安値</th>
+						<th>上ひげ率</th>
+						<th>業種</th>
+						<th>翌営業日</th>
+						<th>寄付</th>
+						<th>高値</th>
+						<th>安値</th>
+						<th>勝可能性</th>
+						<th>負可能性</th>
+						<th>寄付乖離率</th>
+						<th>判定</th>
+						<th>pips</th>
+						<th>p/k</th>
+					</tr>
+				</thead>
+				<tbody>
 <?php
 // 数値列
 $numColList = array (
@@ -78,8 +79,9 @@ $decimalColList = array (
 $resultList = KabukaService::getKabukaList ( $conn );
 echo ComnUtil::createTagTrByMapList ( $resultList, $numColList, $percentColList, $decimalColList );
 ?>
-			</tbody>
-		</table>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </body>
 </html>

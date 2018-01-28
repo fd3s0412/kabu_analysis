@@ -24,8 +24,6 @@ ChromePhp::log ( $meigara );
 <head>
 <?php include 'fragment/head.php'; ?>
 <title>5分足</title>
-<script src="./js/libs/ResizeInner/ResizeInner.js"></script>
-<script src="./js/libs/AccordionWrapper/AccordionWrapper.js"></script>
 <script src="./js/chart5m.js"></script>
 </head>
 <body>
@@ -38,15 +36,17 @@ ChromePhp::log ( $meigara );
 			<dl>
 				<dt>
 					証券コード
-					<i id="btnAccordionClose" class="fa fa-caret-square-o-up fa-2" aria-hidden="true"></i>
-					<i id="btnAccordionOpen" class="fa fa-caret-square-o-down fa-2" aria-hidden="true"></i>
+					<i id="shoken_info_close" class="fa fa-caret-square-o-up fa-2"
+						aria-hidden="true"></i>
+					<i id="shoken_info_open" class="fa fa-caret-square-o-down fa-2"
+						aria-hidden="true"></i>
 				</dt>
 				<dd>
 					<input type="text" name="shoken_code"
 						value="<?php echo $shoken_code; ?>" />
 				</dd>
 			</dl>
-			<div class="accordion_wrapper">
+			<div id="shoken_info" class="accordion_wrapper">
 				<dl>
 					<dt>銘柄名</dt>
 					<dd><?php echo $meigara['meigaramei']; ?></dd>

@@ -1,12 +1,15 @@
 (function($) {
 	/**
 	 * 表示非表示を切り替える.
+	 * 対象のDOMにはIDを付与すること.
 	 */
 	$.fn.AccordionWrapper = function(options) {
+		var id = $(this).attr('id');
+
 		var settings = {
 				defaultOpenFlg: false, // 初期表示フラグ
-				btnOpenSelector: "#btnAccordionOpen", // 表示ボタンなどのセレクタ
-				btnCloseSelector: "#btnAccordionClose" // 非表示ボタンなどのセレクタ
+				btnOpenSelector: '#' + id + "_open", // 表示ボタンのセレクタ
+				btnCloseSelector: '#' + id + "_close" // 非表示ボタンのセレクタ
 		};
 		if (options) $.extend(settings, options);
 
