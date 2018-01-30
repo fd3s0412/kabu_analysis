@@ -4,3 +4,4 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="./js/libs/ResizeInner/ResizeInner.js"></script>
 <script src="./js/libs/AccordionWrapper/AccordionWrapper.js"></script>
+<script src="./js/libs/FixedMenu/FixedMenu.js"></script>

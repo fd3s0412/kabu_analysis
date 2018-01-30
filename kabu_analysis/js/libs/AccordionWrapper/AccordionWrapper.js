@@ -18,13 +18,13 @@
 				// 初期処理.
 				// ------------------------------------------------------------
 				init: function($wrapper, settings) {
-					methods.visibleControlButton($wrapper, settings);
+					methods.visibleControl($wrapper, settings);
 					methods.addEvent($wrapper, settings);
 				},
 				// ------------------------------------------------------------
-				// ボタンの表示非表示制御.
+				// ボタンと領域の表示非表示制御.
 				// ------------------------------------------------------------
-				visibleControlButton: function($wrapper, settings) {
+				visibleControl: function($wrapper, settings) {
 					if (settings.defaultOpenFlg) {
 						$wrapper.show();
 						$(settings.btnOpenSelector).hide();
