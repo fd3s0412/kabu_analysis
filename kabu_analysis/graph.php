@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <?php
-include (dirname ( __FILE__ ) . '/php_class/ChromePhp.php');
-include (dirname ( __FILE__ ) . '/php_class/ComnUtil.php');
-include (dirname ( __FILE__ ) . '/php_class/CsvUtil.php');
-require_once (dirname ( __FILE__ ) . '/php_class/dao/DailyChartDao.php');
+include ($_SERVER['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/ChromePhp.php');
+include ($_SERVER['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/ComnUtil.php');
+include ($_SERVER['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/CsvUtil.php');
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/dao/DailyChartDao.php');
 
 // パラメタ
 $shokenCd = $_GET ['shokenCd'];
@@ -18,8 +18,6 @@ ChromePhp::log ( count ( $datas ) );
 
 <head>
 <?php include 'fragment/head.php'; ?>
-<link rel="stylesheet" type="text/css" href="/js/libs/SgrChart/SgrChart.css">
-<script src="/js/libs/SgrChart/SgrChart.js"></script>
 <script>
 $(function() {
 	var datas = <?php echo json_encode($datas); ?>;

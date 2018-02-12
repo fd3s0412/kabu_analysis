@@ -21,7 +21,7 @@
 			</a>
 		</li>
 	</ul>
-	<ul class="fixed_menu">
+	<ul id="fixed_menu" class="fixed_menu">
 		<li>
 			<a href="./kabuka_ichiran.php">株価一覧</a>
 		</li>

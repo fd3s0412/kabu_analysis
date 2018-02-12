@@ -1,24 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <?php
-require_once (dirname ( __FILE__ ) . '/php_class/ChromePhp.php');
-require_once (dirname ( __FILE__ ) . '/php_class/dao/Chart5mDao.php');
-require_once (dirname ( __FILE__ ) . '/php_class/dao/MasterMeigaraDao.php');
-
-// パラメタ
-$shoken_code = $_GET ['shoken_code'];
-
-// グラフ表示用データ取得
-$dao = new Chart5mDao ();
-$datas = $dao->findByShokenCd ( $shoken_code );
-ChromePhp::log ( count ( $datas ) );
-
-// 銘柄データ取得
-$masterMeigaraDao = new MasterMeigaraDao ();
-$meigara = $masterMeigaraDao->findByShokenCd ( $shoken_code );
-ChromePhp::log ( $meigara );
-
-// 買条件該当レコード
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/controller/Chart5mController.php');
 ?>
 
 <head>
@@ -83,13 +66,14 @@ ChromePhp::log ( $meigara );
 						<th>安値</th>
 						<th>終値</th>
 						<th>出来高</th>
-						<th>移動平均短期</th>
-						<th>移動平均中期</th>
-						<th>移動平均長期</th>
 						<th>MACD</th>
 						<th>シグナル</th>
 						<th>OSCI</th>
 						<th>RSI</th>
+						<th>EMA(12)乖離率</th>
+						<th>EMA(26)乖離率</th>
+						<th>EMA(12)</th>
+						<th>EMA(26)</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -104,13 +88,14 @@ ChromePhp::log ( $meigara );
 						$line .= '<td class="align_right">' . $data ['yasune'] . '</td>';
 						$line .= '<td class="align_right">' . $data ['owarine'] . '</td>';
 						$line .= '<td class="align_right">' . $data ['dekidaka'] . '</td>';
-						$line .= '<td class="align_right">' . $data ['ma_short'] . '</td>';
-						$line .= '<td class="align_right">' . $data ['ma_middle'] . '</td>';
-						$line .= '<td class="align_right">' . $data ['ma_long'] . '</td>';
 						$line .= '<td class="align_right">' . $data ['macd'] . '</td>';
 						$line .= '<td class="align_right">' . $data ['signal'] . '</td>';
 						$line .= '<td class="align_right">' . $data ['osci'] . '</td>';
 						$line .= '<td class="align_right">' . $data ['rsi'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['ema_kairiritsu_12'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['ema_kairiritsu_26'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['ema_12'] . '</td>';
+						$line .= '<td class="align_right">' . $data ['ema_26'] . '</td>';
 						$html .= $line . '</tr>';
 					}
 					echo $html;

@@ -7,7 +7,9 @@
 		var windowHeight = $(window).innerHeight();
 		var posY = $(this).position().top;
 
-		$(this).css('height', windowHeight - posY);
+		if (windowHeight > posY) {
+			$(this).css('height', windowHeight - posY);
+		}
 
 		return this;
 	};

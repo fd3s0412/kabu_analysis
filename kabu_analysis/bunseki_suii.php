@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <?php
-include (dirname ( __FILE__ ) . '/php_class/ComnUtil.php');
-include (dirname ( __FILE__ ) . '/php_class/BunsekiSuiiService.php');
-include (dirname ( __FILE__ ) . '/php_class/ChromePhp.php');
+include ($_SERVER['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/ComnUtil.php');
+include ($_SERVER['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/BunsekiSuiiService.php');
+include ($_SERVER['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/ChromePhp.php');
 
 // パラメータ取得
 $shoken_code = htmlspecialchars ( $_GET ['shoken_code'] );

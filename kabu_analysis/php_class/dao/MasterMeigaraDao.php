@@ -1,5 +1,5 @@
 <?php
-require_once (dirname ( __FILE__ ) . '/Chart5mBaseDao.php');
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/dao/Chart5mBaseDao.php');
 class MasterMeigaraDao extends Chart5mBaseDao {
 	private $SQL_FIND_BY_SHOKEN_CD = '
   select
@@ -23,7 +23,7 @@ class MasterMeigaraDao extends Chart5mBaseDao {
 		if (count($list) > 0) {
 			return $list[0];
 		} else {
-			return array();
+			return null;
 		}
 	}
 }

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <?php
-include (dirname ( __FILE__ ) . '/php_class/ComnUtil.php');
-include (dirname ( __FILE__ ) . '/php_class/KabuKohoService.php');
+include ($_SERVER['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/ComnUtil.php');
+include ($_SERVER['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/KabuKohoService.php');
 
 // データベースに接続
 $dsn = "sqlite:kabu.sqlite";

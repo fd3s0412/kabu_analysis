@@ -4,7 +4,7 @@ class Chart5mBaseDao {
 	protected $conn;
 
 	function __construct() {
-		$this->conn = new PDO ( "sqlite:/home/boc-fd3s/www/kabu_analysis/db/chart5m.sqlite" );
+		$this->conn = new PDO ( "sqlite:" . $_SERVER['DOCUMENT_ROOT'] . "/kabu_analysis/db/chart5m.sqlite" );
 	}
 
 	/**

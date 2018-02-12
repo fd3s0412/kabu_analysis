@@ -57,11 +57,16 @@ namespace WpfApp1
             txtBossYusenFlg.Content = bossYusenFlg.ToString();
 
 
-            // 5-2
-            txtPointX.Text = "1280";
-            txtPointY.Text = "786";
+            // 5-1
+            txtPointX.Text = "370";
+            txtPointY.Text = "550";
             txtDragAndDropX.Text = "0";
-            txtDragAndDropY.Text = "0";
+            txtDragAndDropY.Text = "50";
+            // 5-2
+            //txtPointX.Text = "1280";
+            //txtPointY.Text = "786";
+            //txtDragAndDropX.Text = "0";
+            //txtDragAndDropY.Text = "0";
             // B2
             //txtPointX.Text = "1320";
             //txtPointY.Text = "280";
