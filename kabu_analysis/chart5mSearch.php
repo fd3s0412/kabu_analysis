@@ -387,6 +387,7 @@ $(function() {
 			<!-- ------------------------------------------------------------ -->
 			<div class="btn_area">
 				<a href="#" class="btn_base btn_search">検 索</a>
+				<a id="btnRiekiKeisan" href="#" class="btn_base">利益計算</a>
 				<input type="hidden" name="execute" value="true" />
 			</div>
 		</form>
@@ -412,6 +413,8 @@ $(function() {
 						<th>EMA(26)乖離率</th>
 						<th>EMA(12)</th>
 						<th>EMA(26)</th>
+						<th>粗利益</th>
+						<th>累計</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -435,6 +438,8 @@ $(function() {
 							$line .= '<td class="align_right">' . $data ['ema_kairiritsu_26'] . '</td>';
 							$line .= '<td class="align_right">' . $data ['ema_12'] . '</td>';
 							$line .= '<td class="align_right">' . $data ['ema_26'] . '</td>';
+							$line .= '<td></td>';
+							$line .= '<td></td>';
 							$html .= $line . '</tr>';
 						}
 					}
