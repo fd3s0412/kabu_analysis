@@ -42,7 +42,7 @@ $(function() {
 				$.each(window.DATAS, function(i, data) {
 					if (addBuyFlg && data['buy_flg'] != 0 || !addBuyFlg && data['sell_flg'] != 0) {
 						if (!addBuyFlg) {
-							data['ararieki'] = parseInt(preOwarine || 0) - parseInt(data['owarine'] || 0);
+							data['ararieki'] = parseInt(data['owarine'] || 0) - parseInt(preOwarine || 0);
 							ruikei += data['ararieki'];
 							data['ruikei'] = ruikei;
 						} else {

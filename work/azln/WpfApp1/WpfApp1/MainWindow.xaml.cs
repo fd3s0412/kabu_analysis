@@ -286,12 +286,24 @@ namespace WpfApp1
             txtDragAndDropX.Text = "0";
             txtDragAndDropY.Text = "0";
         }
+
         /// <summary>
         /// Debug用ボタン押下処理.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Debug_Click(object sender, RoutedEventArgs e)
+        {
+            Thread.Sleep(1000);
+            mouseService.DragAndDropLeft(Int32.Parse(txtDragAndDropX.Text), Int32.Parse(txtDragAndDropY.Text));
+        }
+
+        /// <summary>
+        /// Macro_Click処理.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Macro_Click(object sender, RoutedEventArgs e)
         {
             Thread.Sleep(1000);
             mouseService.DragAndDropLeft(Int32.Parse(txtDragAndDropX.Text), Int32.Parse(txtDragAndDropY.Text));
