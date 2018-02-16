@@ -305,8 +305,53 @@ namespace WpfApp1
         /// <param name="e"></param>
         private void Macro_Click(object sender, RoutedEventArgs e)
         {
-            Thread.Sleep(1000);
-            mouseService.DragAndDropLeft(Int32.Parse(txtDragAndDropX.Text), Int32.Parse(txtDragAndDropY.Text));
+            int wait = 1000;
+            int waitKeyCombination = 300;
+
+            for (int i = 0; i < 2062; i++)
+            {
+                Thread.Sleep(wait);
+                mouseService.ClickRight(746, 112);
+
+                Thread.Sleep(wait);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYDOWN, Keys.P);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYUP, Keys.P);
+
+                Thread.Sleep(wait);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYDOWN, Keys.Return);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYUP, Keys.Return);
+
+                Thread.Sleep(3000);
+                mouseService.ClickRight(755, 165);
+
+                Thread.Sleep(wait);
+                mouseService.ClickLeft(815, 420);
+
+                Thread.Sleep(wait);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYDOWN, Keys.LControlKey);
+                Thread.Sleep(waitKeyCombination);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYDOWN, Keys.V);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYUP, Keys.V);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYUP, Keys.LControlKey);
+
+                Thread.Sleep(wait);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYDOWN, Keys.Return);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYUP, Keys.Return);
+
+                Thread.Sleep(wait);
+                mouseService.ClickLeft(2110, 5);
+
+                Thread.Sleep(wait);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYDOWN, Keys.Down);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYUP, Keys.Down);
+
+                Thread.Sleep(wait);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYDOWN, Keys.LControlKey);
+                Thread.Sleep(waitKeyCombination);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYDOWN, Keys.C);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYUP, Keys.C);
+                mouseService.SendInputKey(mouseService.KEYEVENTF_KEYUP, Keys.LControlKey);
+            }
         }
     }
 }

@@ -5,8 +5,8 @@
 				<i class="fa fa-bars fa-3" aria-hidden="true"></i>
 			</a>
 		</li>
-		<li data-hover_massage="5分足">
-			<a href="./chart5m.php?shoken_code=3656">
+		<li data-hover_massage="日足">
+			<a href="./chartDailySearch.php">
 				<i class="fa fa-list-alt fa-3" aria-hidden="true"></i>
 			</a>
 		</li>

@@ -34,7 +34,7 @@ class Chart5mDao extends Chart5mBaseDao {
 	 *
 	 * @param unknown $conditions
 	 */
-	public function findByConditions(Chart5mSearchForm $conditions) {
+	public function findByConditions(ChartSearchForm $conditions) {
 		$sql = "SELECT * ";
 		$sql .= " , CASE WHEN ";
 		$sql .= $conditions->createWhereBuy ();

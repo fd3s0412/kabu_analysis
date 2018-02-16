@@ -2,9 +2,9 @@
 require_once ($_SERVER ['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/ChromePhp.php');
 require_once ($_SERVER ['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/dao/Chart5mDao.php');
 require_once ($_SERVER ['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/dao/MasterMeigaraDao.php');
-require_once ($_SERVER ['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/form/Chart5mSearchForm.php');
+require_once ($_SERVER ['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/form/ChartSearchForm.php');
 
-$form = new Chart5mSearchForm ();
+$form = new ChartSearchForm ();
 
 // 検索処理実施
 if (isset ( $_GET ['execute'] )) {
