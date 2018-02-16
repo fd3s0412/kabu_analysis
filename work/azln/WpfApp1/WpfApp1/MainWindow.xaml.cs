@@ -307,13 +307,14 @@ namespace WpfApp1
         {
             int wait = 1000;
             int waitKeyCombination = 300;
+            breakFlg = false;
 
-            for (int i = 0; i < 2062; i++)
+            for (int i = 0; i < 2062 && breakFlg == false; i++)
             {
                 Thread.Sleep(wait);
                 mouseService.ClickRight(746, 112);
 
-                Thread.Sleep(wait);
+                Thread.Sleep(3000);
                 mouseService.SendInputKey(mouseService.KEYEVENTF_KEYDOWN, Keys.P);
                 mouseService.SendInputKey(mouseService.KEYEVENTF_KEYUP, Keys.P);
 
@@ -321,13 +322,13 @@ namespace WpfApp1
                 mouseService.SendInputKey(mouseService.KEYEVENTF_KEYDOWN, Keys.Return);
                 mouseService.SendInputKey(mouseService.KEYEVENTF_KEYUP, Keys.Return);
 
-                Thread.Sleep(3000);
+                Thread.Sleep(2000);
                 mouseService.ClickRight(755, 165);
 
-                Thread.Sleep(wait);
+                Thread.Sleep(2000);
                 mouseService.ClickLeft(815, 420);
 
-                Thread.Sleep(wait);
+                Thread.Sleep(2000);
                 mouseService.SendInputKey(mouseService.KEYEVENTF_KEYDOWN, Keys.LControlKey);
                 Thread.Sleep(waitKeyCombination);
                 mouseService.SendInputKey(mouseService.KEYEVENTF_KEYDOWN, Keys.V);

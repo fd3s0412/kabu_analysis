@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <?php
-require_once ($_SERVER ['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/controller/Chart5mSearchController.php');
+require_once ($_SERVER ['DOCUMENT_ROOT'] . '/kabu_analysis/php_class/controller/ChartDailySearchController.php');
 ?>
 
 <head>
@@ -14,12 +14,12 @@ $(function() {
 	<?php } ?>
 });
 </script>
-<script src="./js/chart5mSearch.js"></script>
+<script src="./js/chartDailySearch.js"></script>
 </head>
 <body>
 	<?php include 'header.php'; ?>
 	<div class="contents">
-		<form id="chart5mSearch" method="get" action="./chart5mSearch.php">
+		<form id="chartDailySearch" method="get" action="./chartDailySearch.php">
 			<?php include 'fragment/searchArea.php'; ?>
 			<!-- ------------------------------------------------------------ -->
 			<!-- ボタンエリア -->
@@ -38,7 +38,6 @@ $(function() {
 				<thead>
 					<tr>
 						<th>日付</th>
-						<th>時刻</th>
 						<th>始値</th>
 						<th>高値</th>
 						<th>安値</th>
@@ -63,7 +62,6 @@ $(function() {
 						foreach ( $datas as $data ) {
 							$line = '<tr class="' . ($data ['buy_flg'] ? ' buy_row' : '') . ($data ['sell_flg'] ? ' sell_row' : '') . '">';
 							$line .= '<td>' . $data ['torihiki_date'] . '</td>';
-							$line .= '<td>' . $data ['torihiki_time'] . '</td>';
 							$line .= '<td class="align_right">' . $data ['hajimene'] . '</td>';
 							$line .= '<td class="align_right">' . $data ['takane'] . '</td>';
 							$line .= '<td class="align_right">' . $data ['yasune'] . '</td>';

@@ -24,36 +24,11 @@ $(function() {
 		// 表生成.
 		//----------------------------------------------------------------------
 		_generate: function() {
-			var resultList = methods._riekiKeisan();
+			var resultList = window.APP_METHODS.riekiKeisan();
 			$('#torihiki_table')
 					.find('tbody')
 					.empty()
 					.append(methods._createTr(resultList));
-		},
-		//----------------------------------------------------------------------
-		// 取引実施タイミングデータ抽出.
-		//----------------------------------------------------------------------
-		_riekiKeisan: function() {
-			var list = [];
-			if (window.DATAS) {
-				var addBuyFlg = true;
-				var preOwarine = 0;
-				var ruikei = 0;
-				$.each(window.DATAS, function(i, data) {
-					if (addBuyFlg && data['buy_flg'] != 0 || !addBuyFlg && data['sell_flg'] != 0) {
-						if (!addBuyFlg) {
-							data['ararieki'] = parseInt(data['owarine'] || 0) - parseInt(preOwarine || 0);
-							ruikei += data['ararieki'];
-							data['ruikei'] = ruikei;
-						} else {
-							preOwarine = data['owarine'];
-						}
-						list.push(data);
-						addBuyFlg = !addBuyFlg;
-					}
-				});
-			}
-			return list;
 		},
 		//----------------------------------------------------------------------
 		// 表の内部のDOMを生成する.
@@ -77,8 +52,8 @@ $(function() {
 				tag += '<td class="align_right">' + (data ['ema_kairiritsu_26'] || '') + '</td>';
 				tag += '<td class="align_right">' + data ['ema_12'] + '</td>';
 				tag += '<td class="align_right">' + data ['ema_26'] + '</td>';
-				tag += '<td class="align_right' + ((data['ararieki'] || 0) < 0 ? ' minus' : '') + '">' + (data ['ararieki'] === 0 ? 0 : (data ['ararieki'] || '')) + '</td>';
-				tag += '<td class="align_right' + ((data['ruikei'] || 0) < 0 ? ' minus' : '') + '">' + (data ['ruikei'] === 0 ? 0 : (data ['ruikei'] || '')) + '</td>';
+				tag += '<td class="align_right' + ((data['ararieki'] || 0) < 0 ? ' minus' : '') + '">' + (data ['ararieki'] !== undefined && data ['ararieki'] !== null? data ['ararieki'] : '') + '</td>';
+				tag += '<td class="align_right' + ((data['ruikei'] || 0) < 0 ? ' minus' : '') + '">' + (data ['ruikei'] !== undefined && data ['ruikei'] !== null? data ['ruikei'] : '') + '</td>';
 				tag += '</tr>';
 			});
 			return tag;
